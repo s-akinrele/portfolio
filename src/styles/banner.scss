@@ -5,7 +5,7 @@
   // border-radius: 0px;
   // z-index: 999;
   // margin-bottom: 0px;
-  // transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 
     // nav custom
     margin-top: 0px;
@@ -21,21 +21,16 @@
     left: 0;
 
 
-    @media only screen and (min-width: 600px)  {
-      // flex-wrap: wrap;
-      // margin: 20px 10px;
+    @media (min-width: 600px)  {
       z-index: 1030;
     }
 
   .container {
-    display: flex;
-    align-items: center;
     width: 90%;
     padding-right: 0;
     padding-left: 0;
-    justify-content: space-between;
     margin: auto;
-  
+
     .logo {
       color: #000;
       font-weight: 700;
@@ -50,11 +45,79 @@
       white-space: nowrap;
 
       @media (min-width: 600px)  {
-        // flex-wrap: wrap;
-        // margin: 20px 10px;
         color: #fff;
       }
     }
-  }
 
+    .nav-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .nav-list {
+        i.fas.fa-bars {
+          padding: 10px;
+
+          &:hover {
+            outline: -webkit-focus-ring-color auto 5px;
+          }
+        }
+      }  
+    }
+
+    .navbar-list .menu-item {
+      margin-right: 20px;
+    }
+
+    .nav-list > .navbar-list {
+      display: none;
+
+      @media (min-width: 600px) {
+        display: block;
+      }
+    }
+
+    .navbar-toggler {
+      @media (min-width: 600px)  {
+        display: none;
+      }
+    }
+
+    .navbar-nav {
+      list-style: none;
+
+      @media (min-width: 600px) {
+        display: flex;
+      }
+    }
+
+    .navbar-list-mobile {
+      padding: 0;
+      display: none;
+
+      .navbar-nav { padding: 0; }
+
+      &.true { display: block; }
+
+      .menu-item + .menu-item {
+        margin-top: 30px;
+      }
+
+      ul {
+        // transition: all 0.5s ease-in-out;
+        // -webkit-transition: all .25s ease;
+        // -moz-transition: all .25s ease;
+        //  -ms-transition: all .25s ease;
+        //   -o-transition: all .25s ease;
+        //      transition: all .25s ease;
+        transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
+      }
+
+      @media (min-width: 600px) {
+        display: none;
+
+        &.true { display: none; }
+      }
+    }
+  }
 }

@@ -1,0 +1,10 @@
+.intro {
+  h1 {
+    margin-top: 50px;
+    font-size: 58px;
+    font-weight: 700;
+    overflow: hidden;
+    -webkit-animation: typing 3.5s steps(30, end), blink-caret .5s step-end 7;
+    animation: typing 3.5s steps(30, end), blink-caret .5s step-end 7;
+  }
+}

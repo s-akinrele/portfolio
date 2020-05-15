@@ -1,0 +1,28 @@
+@import '../colors.scss';
+
+.biography {
+  margin-top: 60px;
+
+  .action-items {
+    width: 100%;
+
+    .action-item {
+      width: 20%;
+      height: 50px;
+      border: 0;
+      font-size: 13px;
+      text-transform: uppercase;
+      background-color: #24263b;
+      color: #fff;
+
+      &.active {
+        background-color: $mustard;
+        color: rgb(0,0,0);
+      }
+    }
+  }
+  
+  .content {
+    background-color: #323552;
+  }
+}

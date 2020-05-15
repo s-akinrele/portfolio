@@ -3,7 +3,7 @@ import '../styles/pageHero.scss';
 import Idea from '../images/idea.png';
 
 const PageHero = () => (
-  <div className='page-hero'>
+  <section className='page-hero'>
     <div className='basic-info'>
       <span className='greeting'>Hello I'm</span>
       <h1>Oluwasinmisola<br/>Akinrele</h1>
@@ -12,7 +12,7 @@ const PageHero = () => (
     <div className='idea'>
       <img src={Idea} alt='idea' />
     </div>
-  </div>
+  </section>
 )
 
 export default PageHero;

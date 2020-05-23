@@ -1,0 +1,57 @@
+@import './colors.scss';
+
+.socials {
+  h6 {
+    color: $mustard;
+    text-transform: uppercase;
+  }
+
+  h3 {
+    font-family: fantasy;
+  }
+
+  .connect {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .action-item {
+      display: flex;
+      justify-content: space-between;
+      border: 1px solid $mustard;
+      padding: 20px;
+      border-radius: 10px;
+      width: 25%;
+      background-color: #2d304b;
+
+      &:last-of-type {
+        margin-top: 25px;
+      }
+
+      img { 
+        width: 40px;
+        height: 40px;
+        align-self: center;
+      }
+
+      p {
+        font-family: fantasy;
+        font-size: 22px;
+        font-weight: 700;
+      }
+
+      span {
+        font-size: 10px;
+        color: $mustard;
+        font-weight: 500;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+
+      &:hover {
+        background-color: $mustard;
+
+        p, span { color: black;}
+      }
+    }
+  }
+}

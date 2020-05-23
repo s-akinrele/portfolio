@@ -11,30 +11,30 @@ const Socials = () =>  (
     <h6>Social Media</h6>
     <h3>Let's Be Friends</h3>
     <div className="connect">
-      <div className="action-item">
+      <a className="action-item" target="_blank" href="https://www.linkedin.com/in/oluwasinmisola-akinrele">
         <p>Linkedin<br/>
           <span>Professional social profile</span>
         </p>
         <img src={LinkedinImg} alt="linkedin" />
-      </div>
-      <div className="action-item">
+      </a>
+      <a className="action-item" target="_blank" href="https://twitter.com/simiakinrele">
         <p>Twitter<br/>
           <span>Random thoughts</span>
         </p>
         <img src={TwitterImg} alt="twitter" />
-        </div>
-      <div className="action-item">
+        </a>
+      <a className="action-item" target="_blank" href="mailto:akinrelesimi@gmail.com">
         <p>Email<br/>
-          <span>akinrelesimi@gmail.com</span>
+          <span>Let's connect</span>
         </p>
         <img src={MailImg} alt="mail" />
-      </div>
-      <div className="action-item">
+      </a>
+      <a className="action-item" target="_blank" href="https://medium.com/@akinrelesimi">
         <p>Medium<br/>
           <span>Work case study</span>
         </p>
         <img src={MediumImg} alt="medium" />
-      </div>
+      </a>
     </div>
   </section>
 )

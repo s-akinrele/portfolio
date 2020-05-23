@@ -3,6 +3,7 @@ import Banner from './Banner'
 import PageHero from './PageHero'
 import Biography from './Biography/Biography'
 import Socials from './Socials'
+import Footer from './Footer'
 
 import '../styles/homePage.scss'
 
@@ -12,6 +13,7 @@ const HomePage = () => (
     <PageHero />
     <Biography />
     <Socials />
+    <Footer />
   </div>
 )
 

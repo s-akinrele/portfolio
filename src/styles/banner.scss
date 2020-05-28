@@ -33,10 +33,7 @@
         font-size: 13px;
       }
 
-      &.active {
-        color: $mustard;
-        text-decoration: underline;
-      }
+      &.active { border-bottom: 3px solid $mustard; }
     }
   }
 

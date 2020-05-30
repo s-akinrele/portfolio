@@ -7,7 +7,7 @@ import MailImg from '../images/mail.png';
 
 
 const Socials = () =>  (
-  <section className="socials">
+  <section className="socials" id="social-container">
     <h6>Social Media</h6>
     <h3>Let's Be Friends</h3>
     <div className="connect">

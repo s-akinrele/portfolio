@@ -2,7 +2,7 @@ import React from 'react';
 import Relaxed from '../../images/relaxed.png';
 
 const AboutMe = () => (
-  <div className="bio-wrapper">
+  <div className="bio-wrapper" id="about-container" >
     <img src={Relaxed} alt="relaxed" />
     <p className="bio">
       <h5>About Me</h5>

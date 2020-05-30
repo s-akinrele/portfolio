@@ -6,15 +6,19 @@ const Banner = () => {
     window.open('mailto:akinrelesimi@gmail.com', '_blank');
   }
 
+  const customScroll = (elementId) => {
+    const element = document.querySelector(elementId);
+    element.scrollIntoView({ behavior: 'smooth', block: 'center'});
+  }
+
   return (
     <header className="banner">
       <div className="title">Simi</div>
       <nav>
         <ul>
           <li className='menu-item active'>Home</li>
-          <li className='menu-item'>About</li>
-          <li className='menu-item'>Education</li>
-          <li className='menu-item'>Services</li>
+          <li className='menu-item' onClick={() => customScroll("#about-container")}>About</li>
+          <li className='menu-item' onClick={() => customScroll("#social-container")}>Socials</li>
           <li className='menu-item chat' onClick={letChat}>let's chat</li>
         </ul>
       </nav>

@@ -31,9 +31,16 @@
         color: $mustard;
         border: 1px solid $mustard;
         font-size: 13px;
+        cursor: pointer;
       }
 
       &.active { border-bottom: 3px solid $mustard; }
+
+      &:hover {
+        &:not(.chat) {
+          border-bottom: 3px solid $mustard;
+        }
+      }
     }
   }
 

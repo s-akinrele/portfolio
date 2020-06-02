@@ -10,7 +10,7 @@ const Banner = () => {
   }
 
   const customScroll = (elementId) => {
-    const element = document.querySelector(elementId);
+    const element = document.getElementById(elementId);
     element.scrollIntoView({ behavior: 'smooth', block: 'center'});
   }
 
@@ -18,11 +18,11 @@ const Banner = () => {
     let name = event.target.getAttribute('name');
     switch(name) {
       case 'about':
-        customScroll("#about-container")
+        customScroll("about-container")
         setActiveElement({[name]: true})
         break;
       case 'social':
-        customScroll("#social-container")
+        customScroll("social-container")
         setActiveElement({[name]: true})
         break;
       default:

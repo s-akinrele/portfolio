@@ -3,47 +3,52 @@
 @import './breakpoint.scss';
 
 .banner {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
   padding: 20px 0;
   box-sizing: border-box;
- 
-  nav {
-    width: 50%;
-    display: none;
 
-    ul {
-      display: flex;
-      justify-content: space-between;
-      position: relative;
-      padding-left: 0;
-    }
+  .nav-desktop {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 
-    li {
-      list-style: none;
-      padding: 10px;
-      text-transform: uppercase;
-
-      &:not(.chat) {
-        font-size: 12px;
-        text-align: center;
-        padding-bottom: 0;
+    nav {
+      ul {
+        display: none;
+        justify-content: space-between;
+        position: relative;
+        padding-left: 0;
       }
 
-      &.chat {
-        color: $mustard;
-        border: 1px solid $mustard;
-        font-size: 13px;
-        cursor: pointer;
-      }
+      li {
+        list-style: none;
+        padding: 10px;
+        text-transform: uppercase;
 
-      &.active { border-bottom: 3px solid $mustard; }
-
-      &:hover {
         &:not(.chat) {
-          border-bottom: 3px solid $mustard;
+          font-size: 12px;
+          text-align: center;
+          padding-bottom: 0;
         }
+
+        &.chat {
+          color: $mustard;
+          border: 1px solid $mustard;
+          font-size: 13px;
+          cursor: pointer;
+        }
+
+        &.active { border-bottom: 3px solid $mustard; }
+
+        &:hover {
+          &:not(.chat) {
+            border-bottom: 3px solid $mustard;
+          }
+        }
+      }
+
+      .icon {
+        color: white;
+        height: 0;
       }
     }
   }
@@ -56,33 +61,54 @@
   }
 
   .nav-mobile {
+    display: none;
     margin: 0;
-    // background-color: #555;
-    // height: 500px;
     color: white;
     border-radius: 10px;
-    display: flex;
+    width: 100%;
 
-    ul { list-style: none; }
+    ul {
+      width: 100%;
+      list-style: none;
+      padding-left: 0;
+      transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
 
-    .icon {
-      color: white;
-      height: 0;
+      li {
+        padding: 20px 10px;
+        text-transform: uppercase;
+
+        &.active {
+          background-color: $lightPurple;
+          color: $mustard;
+        }
+      }
     }
+
+    &.active { display: flex; }
   }
 
   @media (min-width: $mobileLg) {
-    nav {
-      display: block;
-      width: 55%;
-    }
-
     .nav-mobile {
       display: none;
+
+      ul { display: none; }
+    }
+
+    .nav-desktop {
+      nav {
+        display: block;
+        width: 55%;
+
+        ul { display: flex; }
+
+        .icon { display: none; }
+      }
     }
   }
 
   @media (min-width: $tabletLg) {
-    nav { width: 45%; }
+    .nav-desktop nav {
+      width: 45%;
+    }
   }
 }

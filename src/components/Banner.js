@@ -4,6 +4,7 @@ import '../styles/banner.scss';
 
 const Banner = () => {
   const [activeElement, setActiveElement] = useState({home: true});
+  const [display, setDisplay] = useState(false);
 
   const letChat = () => {
     window.open('mailto:akinrelesimi@gmail.com', '_blank');
@@ -33,27 +34,29 @@ const Banner = () => {
 
   return (
     <header className="banner">
-      <div className="title">Simi</div>
-      <nav>
-        <ul>
-          <li name="home" className={classnames('menu-item', {active: activeElement.home})} onClick={onNavigationClick}>Home</li>
-          <li name="about" className={classnames('menu-item', {active: activeElement.about})} onClick={onNavigationClick}>About</li>
-          <li name="social" className={classnames('menu-item', {active: activeElement.social})} onClick={onNavigationClick}>Socials</li>
-          <li name="chat" className='menu-item chat' onClick={letChat}>let's chat</li>
-        </ul>
-      </nav>
+      <div className="nav-desktop">
+        <div className="title">Simi</div>
+        <nav>
+          <ul>
+            <li name="home" className={classnames('menu-item', {active: activeElement.home})} onClick={onNavigationClick}>Home</li>
+            <li name="about" className={classnames('menu-item', {active: activeElement.about})} onClick={onNavigationClick}>About</li>
+            <li name="social" className={classnames('menu-item', {active: activeElement.social})} onClick={onNavigationClick}>Socials</li>
+            <li name="chat" className='menu-item chat' onClick={letChat}>let's chat</li>
+          </ul>
 
-      <div className="nav-mobile">
-        <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Socials</li>
-          <li>let's chat</li>
-        </ul>
-        <a href="javascript:void(0);" className="icon" >
-          <i className="fa fa-bars"></i>
-        </a>
+          <a onClick={() => setDisplay(!display)} className="icon">
+            <i className="fa fa-bars"></i>
+          </a>
+        </nav>
       </div>
+
+        <div className={classnames('nav-mobile', {active: display})}>
+          <ul>
+            <li name="about" className={classnames('menu-item', {active: activeElement.about})} onClick={onNavigationClick}>About</li>
+            <li name="social" className={classnames('menu-item', {active: activeElement.social})} onClick={onNavigationClick}>Socials</li>
+            <li name="chat" className='menu-item' onClick={letChat}>let's chat</li>
+          </ul>
+        </div>
     </header>
   )
 }

@@ -3,7 +3,7 @@
 
 footer {
   height: 200px;
-  background-color: #2d304b;
+  background-color: $lightPurple;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -24,7 +24,7 @@ footer {
       border: 1px solid $mustard;
       font-size: 13px;
       width: 100px;
-      background-color: #2d304b;
+      background-color: $lightPurple;
       text-transform: uppercase;
       outline: none;
     }

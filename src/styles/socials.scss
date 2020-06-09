@@ -1,0 +1,74 @@
+@import './colors.scss';
+@import './breakpoint.scss';
+
+.socials {
+  margin: 50px 0;
+
+  h6 {
+    color: $mustard;
+    text-transform: uppercase;
+  }
+
+  h3 {
+    font-family: fantasy;
+  }
+
+  .connect {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+    .action-item {
+      display: flex;
+      justify-content: space-between;
+      border: 1px solid $mustard;
+      padding: 20px;
+      border-radius: 10px;
+      background-color: #2d304b;
+      text-decoration: none;
+      color: #ffff;
+      margin-bottom: 20px;
+
+      img { 
+        width: 40px;
+        height: 40px;
+        align-self: center;
+      }
+
+      p {
+        font-family: fantasy;
+        font-size: 22px;
+        font-weight: 700;
+      }
+
+      span {
+        font-size: 10px;
+        color: $mustard;
+        font-weight: 500;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+
+      &:hover {
+        background-color: $mustard;
+
+        p, span { color: black; }
+      }
+    }
+  }
+
+  @media (min-width: $tabletMd) {
+    .connect {
+        flex-direction: row;
+
+        .action-item {
+          width: 25%;
+          margin-bottom: 0;
+
+          &:last-of-type {
+            margin-top: 25px;
+          }
+        }
+     }
+  }
+}

@@ -1,123 +1,114 @@
+@import './colors.scss';
+@import './mixin.scss';
+@import './breakpoint.scss';
+
 .banner {
+  padding: 20px 0;
+  box-sizing: border-box;
 
-  // padding: 20px 0px;
-  // width: 100%;
-  // border-radius: 0px;
-  // z-index: 999;
-  // margin-bottom: 0px;
-  transition: all 0.5s ease-in-out;
+  .nav-desktop {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 
-    // nav custom
-    margin-top: 0px;
-    padding: 10px 0px;
-    background-color: #fff;
-    box-shadow: 0 10px 33px rgba(0, 0, 0, .1);
-    color: #000 !important;
-
-    // fixed top
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-
-
-    @media (min-width: 600px)  {
-      z-index: 1030;
-    }
-
-  .container {
-    width: 90%;
-    padding-right: 0;
-    padding-left: 0;
-    margin: auto;
-
-    .logo {
-      color: #000;
-      font-weight: 700;
-      font-size: 24px;
-      text-transform: uppercase;
-
-      // navbar-brand
-      padding-top: .3125rem;
-      padding-bottom: .3125rem;
-      margin-right: 1rem;
-      line-height: inherit;
-      white-space: nowrap;
-
-      @media (min-width: 600px)  {
-        color: #fff;
+    nav {
+      ul {
+        display: none;
+        justify-content: space-between;
+        position: relative;
+        padding-left: 0;
       }
-    }
 
-    .nav-wrapper {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      li {
+        list-style: none;
+        padding: 10px;
+        text-transform: uppercase;
 
-      .nav-list {
-        i.fas.fa-bars {
-          padding: 10px;
+        &:not(.chat) {
+          font-size: 12px;
+          text-align: center;
+          padding-bottom: 0;
+        }
 
-          &:hover {
-            outline: -webkit-focus-ring-color auto 5px;
+        &.chat {
+          color: $mustard;
+          border: 1px solid $mustard;
+          font-size: 13px;
+          cursor: pointer;
+        }
+
+        &.active { border-bottom: 3px solid $mustard; }
+
+        &:hover {
+          &:not(.chat) {
+            border-bottom: 3px solid $mustard;
           }
         }
-      }  
-    }
+      }
 
-    .navbar-list .menu-item {
-      margin-right: 20px;
-    }
-
-    .nav-list > .navbar-list {
-      display: none;
-
-      @media (min-width: 600px) {
-        display: block;
+      .icon {
+        color: white;
+        height: 0;
       }
     }
+  }
 
-    .navbar-toggler {
-      @media (min-width: 600px)  {
-        display: none;
-      }
-    }
+  .title {
+    padding: 10px 0;
+    font-family: fantasy;
+    font-weight: bold;
+    font-size: 25px;
+  }
 
-    .navbar-nav {
+  .nav-mobile {
+    display: none;
+    margin: 0;
+    color: white;
+    border-radius: 10px;
+    width: 100%;
+
+    ul {
+      width: 100%;
       list-style: none;
+      padding-left: 0;
+      transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
 
-      @media (min-width: 600px) {
-        display: flex;
+      li {
+        padding: 20px 10px;
+        text-transform: uppercase;
+
+        &.active {
+          background-color: $lightPurple;
+          color: $mustard;
+        }
       }
     }
 
-    .navbar-list-mobile {
-      padding: 0;
+    &.active { display: flex; }
+  }
+
+  @media (min-width: $mobileLg) {
+    .nav-mobile {
       display: none;
 
-      .navbar-nav { padding: 0; }
+      ul { display: none; }
+    }
 
-      &.true { display: block; }
+    .nav-desktop {
+      nav {
+        display: block;
+        width: 55%;
 
-      .menu-item + .menu-item {
-        margin-top: 30px;
+        ul { display: flex; }
+
+        .icon { display: none; }
       }
+    }
+  }
 
-      ul {
-        // transition: all 0.5s ease-in-out;
-        // -webkit-transition: all .25s ease;
-        // -moz-transition: all .25s ease;
-        //  -ms-transition: all .25s ease;
-        //   -o-transition: all .25s ease;
-        //      transition: all .25s ease;
-        transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
-      }
-
-      @media (min-width: 600px) {
-        display: none;
-
-        &.true { display: none; }
-      }
+  @media (min-width: $tabletLg) {
+    .nav-desktop nav {
+      width: 45%;
     }
   }
 }

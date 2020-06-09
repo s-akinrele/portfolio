@@ -1,0 +1,51 @@
+@import './colors.scss';
+@import './breakpoint.scss';
+
+footer {
+  height: 200px;
+  background-color: $lightPurple;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  .main {
+    display: flex;
+    padding: 10px 0;
+    font-family: fantasy;
+    font-weight: bold;
+    justify-content: space-between;
+
+
+    .logo, .talk { font-size: 20px; }
+
+    button {
+      color: $mustard;
+      border: 1px solid $mustard;
+      font-size: 13px;
+      width: 100px;
+      background-color: $lightPurple;
+      text-transform: uppercase;
+      outline: none;
+    }
+  }
+
+  .main, .copyright {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .copyright {
+    text-align: center;
+    color: grey;
+    font-size: 12px;
+  }
+
+  @media (min-width: $mobileLg) {
+    .main {
+      .logo { font-size: 25px; }
+
+      .talk { font-size: 30px; }
+    }
+  }
+}

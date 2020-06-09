@@ -1,42 +1,65 @@
 import React, { useState } from 'react';
-
+import classnames from 'classnames';
 import '../styles/banner.scss';
 
 const Banner = () => {
+  const [activeElement, setActiveElement] = useState({home: true});
   const [display, setDisplay] = useState(false);
 
+  const letChat = () => {
+    window.open('mailto:akinrelesimi@gmail.com', '_blank');
+  }
+
+  const customScroll = (elementId) => {
+    const element = document.getElementById(elementId);
+    element.scrollIntoView({ behavior: 'smooth', block: 'center'});
+  }
+
+  const onNavigationClick = (event) => {
+    let name = event.target.getAttribute('name');
+    switch(name) {
+      case 'about':
+        customScroll("about-container")
+        setActiveElement({[name]: true})
+        break;
+      case 'social':
+        customScroll("social-container")
+        setActiveElement({[name]: true})
+        break;
+      default:
+        setActiveElement({[name]: true})
+        break
+    }
+  }
+
   return (
-    <div className='banner'>
-      <div className='container'>
-        <div className='nav-wrapper'>
-          <div className='logo'>SIMI</div>
-          <div className='nav-list'>
-            <button className='navbar-toggler collapsed' type='button' onClick={() => setDisplay(!display)}>
-              <i className="fas fa-bars"></i>
-            </button>
-            <div className='navbar-list'>
-              <ul className='navbar-nav collapse'>
-                <li className='menu-item'>Home</li>
-                <li className='menu-item'>About</li>
-                <li className='menu-item'>Education</li>
-                <li className='menu-item'>Services</li>
-                <li className='menu-item'>Contact</li>
-              </ul>
-          </div>
-          </div>
-        </div>
-        <div className={`navbar-list-mobile ${display}`}>
-            <ul className='navbar-nav'>
-              <li className='menu-item'>Home</li>
-              <li className='menu-item'>About</li>
-              <li className='menu-item'>Education</li>
-              <li className='menu-item'>Services</li>
-              <li className='menu-item'>Contact</li>
-            </ul>
-        </div>
+    <header className="banner">
+      <div className="nav-desktop">
+        <div className="title">Simi</div>
+        <nav>
+          <ul>
+            <li name="home" className={classnames('menu-item', {active: activeElement.home})} onClick={onNavigationClick}>Home</li>
+            <li name="about" className={classnames('menu-item', {active: activeElement.about})} onClick={onNavigationClick}>About</li>
+            <li name="social" className={classnames('menu-item', {active: activeElement.social})} onClick={onNavigationClick}>Socials</li>
+            <li name="chat" className='menu-item chat' onClick={letChat}>let's chat</li>
+          </ul>
+
+          <a onClick={() => setDisplay(!display)} className="icon">
+            <i className="fa fa-bars"></i>
+          </a>
+        </nav>
       </div>
-    </div>
+
+        <div className={classnames('nav-mobile', {active: display})}>
+          <ul>
+            <li name="about" className={classnames('menu-item', {active: activeElement.about})} onClick={onNavigationClick}>About</li>
+            <li name="social" className={classnames('menu-item', {active: activeElement.social})} onClick={onNavigationClick}>Socials</li>
+            <li name="chat" className='menu-item' onClick={letChat}>let's chat</li>
+          </ul>
+        </div>
+    </header>
   )
 }
+
 
 export default Banner;

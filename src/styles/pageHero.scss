@@ -1,9 +1,9 @@
 @import './colors.scss';
+@import './breakpoint.scss';
 
 .page-hero {
   display: flex;
   justify-content: space-between;
-  height: 550px;
 
   .basic-info {
     display: flex;
@@ -14,18 +14,36 @@
     margin-top: 30px;
   }
 
-  .idea { height: 300px; }
+  .idea {
+    height: 300px;
+
+    img { display: none; }
+  }
 
   .greeting { 
     color: $mustard;
-    font-size: 30px;
+    font-size: 20px;
   }
 
   h1 {
-    font-size: 60px;
+    font-size: 40px;
     font-family: fantasy;
     margin: 20px 0;
   }
 
-  .title { font-size: 25px; }
+  .title { font-size: 22px; }
+
+  @media (min-width: $tabletLg) {
+    .idea img { display: inline; }
+
+    .greeting { font-size: 30px; }
+
+    h1 { font-size: 60px; }
+
+    .title { font-size: 25px; }
+  }
+
+  @media (min-width: $desktopSm) {
+    height: 550px;
+  }
 }

@@ -42,6 +42,18 @@ const Banner = () => {
           <li name="chat" className='menu-item chat' onClick={letChat}>let's chat</li>
         </ul>
       </nav>
+
+      <div className="nav-mobile">
+        <ul>
+          <li>Home</li>
+          <li>About</li>
+          <li>Socials</li>
+          <li>let's chat</li>
+        </ul>
+        <a href="javascript:void(0);" className="icon" >
+          <i className="fa fa-bars"></i>
+        </a>
+      </div>
     </header>
   )
 }

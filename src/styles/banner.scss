@@ -1,5 +1,6 @@
 @import './colors.scss';
 @import './mixin.scss';
+@import './breakpoint.scss';
 
 .banner {
   display: flex;
@@ -10,10 +11,13 @@
  
   nav {
     width: 50%;
+    display: none;
+
     ul {
       display: flex;
       justify-content: space-between;
       position: relative;
+      padding-left: 0;
     }
 
     li {
@@ -49,5 +53,36 @@
     font-family: fantasy;
     font-weight: bold;
     font-size: 25px;
+  }
+
+  .nav-mobile {
+    margin: 0;
+    // background-color: #555;
+    // height: 500px;
+    color: white;
+    border-radius: 10px;
+    display: flex;
+
+    ul { list-style: none; }
+
+    .icon {
+      color: white;
+      height: 0;
+    }
+  }
+
+  @media (min-width: $mobileLg) {
+    nav {
+      display: block;
+      width: 55%;
+    }
+
+    .nav-mobile {
+      display: none;
+    }
+  }
+
+  @media (min-width: $tabletLg) {
+    nav { width: 45%; }
   }
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import EducationImage from '../../images/education.png';
 
 const Education = () => (
-  <div className="bio-wrapper">
+  <div className="bio-wrapper" id="about-container">
     <img src={EducationImage} alt="edu" />
     <div className="bio">
       <h5>Education</h5>

@@ -2,7 +2,7 @@ import React from 'react';
 import ServiceImage from '../../images/service.png';
 
 const Services = () => (
-  <div className="bio-wrapper">
+  <div className="bio-wrapper" id="about-container">
     <img src={ServiceImage} alt="edu" />
     <div className="bio">
       <h5>Services</h5>

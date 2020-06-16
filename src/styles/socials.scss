@@ -1,5 +1,6 @@
 @import './colors.scss';
 @import './breakpoint.scss';
+@import './font.scss';
 
 .socials {
   margin: 50px 0;
@@ -10,7 +11,7 @@
   }
 
   h3 {
-    font-family: fantasy;
+    font-family: $basicFont;
   }
 
   .connect {
@@ -37,7 +38,7 @@
       }
 
       p {
-        font-family: fantasy;
+        font-family: $basicFont;
         font-size: 22px;
         font-weight: 700;
       }

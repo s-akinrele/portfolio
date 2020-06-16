@@ -1,5 +1,6 @@
 @import './colors.scss';
 @import './breakpoint.scss';
+@import './font.scss';
 
 footer {
   height: 200px;
@@ -12,7 +13,7 @@ footer {
   .main {
     display: flex;
     padding: 10px 0;
-    font-family: fantasy;
+    font-family: $basicFont;
     font-weight: bold;
     justify-content: space-between;
 

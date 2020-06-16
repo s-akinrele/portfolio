@@ -1,6 +1,7 @@
 @import './colors.scss';
 @import './mixin.scss';
 @import './breakpoint.scss';
+@import './font.scss';
 
 .banner {
   padding: 20px 0;
@@ -56,7 +57,7 @@
 
   .title {
     padding: 10px 0;
-    font-family: fantasy;
+    font-family: $basicFont;
     font-weight: bold;
     font-size: 25px;
   }

@@ -1,5 +1,6 @@
 @import './colors.scss';
 @import './breakpoint.scss';
+@import './font.scss';
 
 .page-hero {
   display: flex;
@@ -25,7 +26,7 @@
 
   h1 {
     font-size: 35px;
-    font-family: fantasy;
+    font-family: $basicFont;
     margin: 20px 0;
   }
 

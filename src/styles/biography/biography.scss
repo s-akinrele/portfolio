@@ -22,6 +22,12 @@
         background-color: $mustard;
         color: rgb(0,0,0);
       }
+
+      &:hover {
+        cursor: pointer;
+        background-color: #ecc289;
+        color: rgb(0,0,0);
+      }
     }
   }
 

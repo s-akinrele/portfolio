@@ -5,7 +5,7 @@ import Idea from '../images/idea.png';
 const PageHero = () => (
   <section className='page-hero'>
     <div className='basic-info'>
-      <span className='greeting'>Hello I'm</span>
+      <span className='greeting'>Hello, I'm</span>
       <h1>Oluwasinmisola<br/>Akinrele</h1>
       <span className='title'>Software Engineer</span>
     </div>

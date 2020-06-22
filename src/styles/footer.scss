@@ -23,7 +23,7 @@ footer {
     button {
       color: $mustard;
       border: 1px solid $mustard;
-      font-size: 13px;
+      font-size: 10px;
       width: 100px;
       background-color: $lightPurple;
       text-transform: uppercase;
@@ -47,6 +47,8 @@ footer {
       .logo { font-size: 25px; }
 
       .talk { font-size: 30px; }
+
+      button { font-size: 13px; }
     }
   }
 }

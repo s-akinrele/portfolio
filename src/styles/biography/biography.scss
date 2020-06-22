@@ -43,7 +43,7 @@
       img { display: none; }
 
       .bio {
-        width: 60%;
+        width: 100%;
         padding: 20px;
         line-height: 30px;
 
@@ -64,6 +64,9 @@
   }
 
   @media (min-width: $tabletLg) {
-    .content .bio-wrapper img { display: inline; }
+    .content .bio-wrapper {
+      img { display: inline; }
+      .bio { width: 60%; }
+    }
   }
 }

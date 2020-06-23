@@ -8,7 +8,7 @@ const AboutMe = () => (
       <h5>About Me</h5>
       <h1>Brief info about me</h1>
       I'm a Software Engineer based in Toronto, Canada.
-      I enjoy solving complex problems, while I’m a proficient full-stack engineer, my expertise is in building scalable backend applications using Ruby on Rails.
+      I enjoy solving complex problems, while I’m a proficient full-stack engineer, my expertise is building scalable backend applications using Ruby on Rails.
     </div>
   </div>
 )

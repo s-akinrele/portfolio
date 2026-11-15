@@ -8,10 +8,10 @@ Requires Node 24.
 
 ```bash
 npm install
-npm start
+npm run dev
 ```
 
-`npm start` and `npm run dev` both start the dev server at [http://127.0.0.1:3000](http://127.0.0.1:3000). The page reloads when you edit a file.
+`npm run dev` starts the dev server at [http://127.0.0.1:3000](http://127.0.0.1:3000). The page reloads when you edit a file.
 
 ```bash
 npm run build
@@ -20,7 +20,7 @@ npm run build
 Writes a production build to `dist`.
 
 ```bash
-npm run preview
+npm start
 ```
 
-Serves the production build locally.
+Serves that build. Hosts should run `npm run build`, then `npm start`. `npm start` listens on `0.0.0.0` and uses the `PORT` environment variable when one is set.

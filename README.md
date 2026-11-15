@@ -23,4 +23,4 @@ Writes a production build to `dist`.
 npm start
 ```
 
-Serves that build. Hosts should run `npm run build`, then `npm start`. `npm start` listens on `0.0.0.0` and uses the `PORT` environment variable when one is set.
+Serves the `dist` folder with `serve`. Hosts should run `npm run build`, then `npm start`. `npm start` listens on `0.0.0.0` and uses the `PORT` environment variable when one is set.

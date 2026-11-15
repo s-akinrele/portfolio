@@ -1,21 +1,25 @@
 import React from 'react'
 import '../styles/footer.scss'
 
-const Footer = () => {
-  const letChat = () => {
-    window.open('mailto:akinrelesimi@gmail.com', '_blank');
-  }
+const links = [
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/oluwasinmisola-akinrele' },
+  { label: 'Email', href: 'mailto:akinrelesimi@gmail.com' },
+  { label: 'Medium', href: 'https://medium.com/@akinrelesimi' },
+]
 
-  return (
-    <footer>
-      <div className="main">
-        <div className="logo">Simi</div>
-        <div className="talk">Let's Talk?</div>
-        <button onClick={letChat}>Let's Chat</button>
-      </div>
-      <div className="copyright">&copy; {(new Date()).getFullYear()} Oluwasinmisola Akinrele</div>
-    </footer>
-  )
-}
+const Footer = () => (
+  <footer>
+    <div className="inner">
+      <nav>
+        {links.map((link) => (
+          <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer">
+            {link.label}
+          </a>
+        ))}
+      </nav>
+      <p>&copy; {(new Date()).getFullYear()} Oluwasinmisola Akinrele</p>
+    </div>
+  </footer>
+)
 
-export default Footer;
+export default Footer

@@ -1,116 +1,42 @@
 @import './colors.scss';
-@import './mixin.scss';
-@import './breakpoint.scss';
 @import './font.scss';
 
 .banner {
-  padding: 20px 0;
-  box-sizing: border-box;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(30, 33, 52, 0.88);
+  backdrop-filter: blur(14px);
 
-  .nav-desktop {
+  .bar {
+    width: var(--page);
+    margin: 0 auto;
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    width: 100%;
-
-    nav {
-      ul {
-        display: none;
-        justify-content: space-between;
-        position: relative;
-        padding-left: 0;
-      }
-
-      li {
-        list-style: none;
-        padding: 10px;
-        text-transform: uppercase;
-
-        &:not(.chat) {
-          font-size: 12px;
-          text-align: center;
-          padding-bottom: 0;
-        }
-
-        &.chat {
-          color: $mustard;
-          border: 1px solid $mustard;
-          font-size: 13px;
-          cursor: pointer;
-        }
-
-        &.active { border-bottom: 3px solid $mustard; }
-
-        &:hover {
-          &:not(.chat) {
-            border-bottom: 3px solid $mustard;
-            cursor: pointer;
-          }
-        }
-      }
-
-      .icon {
-        color: white;
-        height: 0;
-      }
-    }
+    padding: 18px 0;
   }
 
   .title {
-    padding: 10px 0;
-    font-family: $basicFont;
-    font-weight: bold;
-    font-size: 25px;
+    font-family: $uiFont;
+    font-weight: 800;
+    font-size: 1.25rem;
+    letter-spacing: -0.04em;
   }
 
-  .nav-mobile {
-    display: none;
-    margin: 0;
-    color: white;
-    border-radius: 10px;
-    width: 100%;
+  .chat {
+    border: 0;
+    border-radius: 999px;
+    background: $mustard;
+    color: #1e2134;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    padding: 0.55rem 1rem;
+    transition: background 0.2s ease, transform 0.2s ease;
 
-    ul {
-      width: 100%;
-      list-style: none;
-      padding-left: 0;
-      transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
-
-      li {
-        padding: 20px 10px;
-        text-transform: uppercase;
-
-        &.active {
-          background-color: $lightPurple;
-          color: $mustard;
-        }
-      }
-    }
-
-    &.active { display: flex; }
-  }
-
-  @media (min-width: $mobileLg) {
-    .nav-mobile {
-      display: none;
-
-      ul { display: none; }
-    }
-
-    .nav-desktop {
-      nav {
-        display: block;
-        width: 55%;
-
-        ul { display: flex; }
-
-        .icon { display: none; }
-      }
-    }
-  }
-
-  @media (min-width: $tabletLg) {
-    .nav-desktop nav {
-      width: 45%;
+    &:hover {
+      background: #f6c98a;
+      transform: translateY(-1px);
     }
   }
 }

@@ -3,51 +3,106 @@
 @import './font.scss';
 
 .page-hero {
-  display: flex;
-  justify-content: space-between;
+  position: relative;
+  isolation: isolate;
+  container-type: inline-size;
+  padding: 2.75rem 0 2.25rem;
 
-  .basic-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 300px;
-  }
-
-  .idea {
-    height: 300px;
-
-    img { display: none; }
-  }
-
-  .greeting { 
-    color: $mustard;
-    font-size: 20px;
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    width: 240px;
+    height: 240px;
+    left: -48px;
+    top: 8%;
+    background: radial-gradient(circle, rgba(240, 186, 114, 0.26) 0%, transparent 68%);
+    pointer-events: none;
   }
 
   h1 {
-    font-size: 35px;
-    font-family: $basicFont;
-    margin: 20px 0;
+    margin: 0;
+    font-family: $displayFont;
+    font-weight: 600;
+    font-size: clamp(2.6rem, 10vw, 3.6rem);
+    line-height: 1.05;
+    letter-spacing: -0.035em;
   }
 
-  .title { font-size: 22px; }
+  .role {
+    margin: 1rem 0 0;
+    color: $mustard;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.4;
+  }
 
-  @media (min-width: $tabletLg) {
-    .basic-info {
-      padding: 30px 0;
-      margin-top: 30px;
+  .summary {
+    margin: 0.7rem 0 0;
+    max-width: 38rem;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 1.05rem;
+    line-height: 1.5;
+  }
+
+  .idea {
+    display: none;
+  }
+
+  @media (min-width: $tabletMd) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: clamp(1.5rem, 3cqi, 3.5rem);
+    padding: 2.25rem 0 2.5rem;
+
+    &::after {
+      display: none;
     }
 
-    .idea img { display: inline; }
+    .basic-info {
+      flex: 1 1 auto;
+      min-width: 0;
+      max-width: 40rem;
+    }
 
-    .greeting { font-size: 30px; }
+    h1 {
+      font-size: clamp(3.2rem, 5.4cqi, 4.6rem);
+    }
 
-    h1 { font-size: 60px; }
+    .role {
+      font-size: clamp(1.05rem, 1.6cqi, 1.25rem);
+    }
 
-    .title { font-size: 25px; }
-  }
+    .summary {
+      font-size: 1.12rem;
+    }
 
-  @media (min-width: $desktopSm) {
-    height: 550px;
+    .idea {
+      display: block;
+      position: relative;
+      flex: 0 0 auto;
+
+      &::before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        width: 30cqi;
+        height: 30cqi;
+        left: 50%;
+        top: 46%;
+        transform: translate(-50%, -50%);
+        background: radial-gradient(circle, rgba(240, 186, 114, 0.3) 0%, transparent 68%);
+        pointer-events: none;
+      }
+
+      img {
+        position: relative;
+        width: 16cqi;
+        height: auto;
+        display: block;
+        object-view-box: inset(3% 16% 18% 13%);
+      }
+    }
   }
 }

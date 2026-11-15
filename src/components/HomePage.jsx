@@ -7,11 +7,13 @@ import Socials from './Socials'
 import '../styles/homePage.scss'
 
 const HomePage = () => (
-  <div className='home-page'>
-    <Banner/>
-    <PageHero />
-    <Biography />
-    <Socials />
+  <div className="home-page">
+    <Banner />
+    <main className="page">
+      <PageHero />
+      <Biography />
+      <Socials />
+    </main>
   </div>
 )
 

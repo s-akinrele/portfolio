@@ -6,18 +6,17 @@
   margin-top: 60px;
 
   .action-items {
+    display: flex;
     width: 100%;
 
     .action-item {
-      width: 33.3%;
+      flex: 1;
       height: 50px;
       border: 0;
       font-size: 13px;
       text-transform: uppercase;
       background-color: #24263b;
       color: #fff;
-      outline: none;
-
       &.active {
         background-color: $mustard;
         color: rgb(0,0,0);
@@ -40,7 +39,12 @@
       padding: 20px 0;
       box-sizing: border-box;
 
-      img { display: none; }
+      img {
+        display: none;
+        width: min(280px, 34%);
+        height: auto;
+        object-fit: contain;
+      }
 
       .bio {
         width: 100%;
@@ -53,14 +57,47 @@
         }
 
         h1 {
-          font-family: $basicFont;
+          margin: 0.35rem 0 0.75rem;
+          font-family: $displayFont;
+          font-weight: 600;
+          font-size: clamp(1.7rem, 3vw, 2.4rem);
+          letter-spacing: -0.02em;
+          line-height: 1.15;
+        }
+
+        p {
+          margin: 0 0 0.9rem;
+        }
+
+        .focus {
+          margin-top: -0.2rem;
+          color: rgba(255, 255, 255, 0.82);
+          font-weight: 600;
+        }
+
+        .place {
+          color: $mustard;
+          font-weight: 700;
+        }
+
+        p:last-child {
+          margin-bottom: 0;
+        }
+
+        ul {
+          margin: 0.15rem 0 0;
+          padding-left: 1.15rem;
+        }
+
+        li {
+          margin: 0 0 0.7rem;
+        }
+
+        li:last-child {
+          margin-bottom: 0;
         }
       }
     }
-  }
-
-  @media (min-width: $tabletSm) {
-    .action-items .action-item { width: 25%; }
   }
 
   @media (min-width: $tabletLg) {

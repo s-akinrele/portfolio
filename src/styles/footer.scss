@@ -1,54 +1,37 @@
-@import './colors.scss';
-@import './breakpoint.scss';
 @import './font.scss';
 
 footer {
-  height: 200px;
-  background-color: $lightPurple;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 
-  .main {
-    display: flex;
-    padding: 10px 0;
-    font-family: $basicFont;
-    font-weight: bold;
-    justify-content: space-between;
-
-
-    .logo, .talk { font-size: 20px; }
-
-    button {
-      color: $mustard;
-      border: 1px solid $mustard;
-      font-size: 10px;
-      width: 100px;
-      background-color: $lightPurple;
-      text-transform: uppercase;
-      outline: none;
-    }
-  }
-
-  .main, .copyright {
-    width: 80%;
+  .inner {
+    width: var(--page);
     margin: 0 auto;
+    padding: 1.75rem 0 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem 1.5rem;
   }
 
-  .copyright {
-    text-align: center;
-    color: grey;
-    font-size: 12px;
+  nav {
+    display: flex;
+    gap: 1.25rem;
   }
 
-  @media (min-width: $mobileLg) {
-    .main {
-      .logo { font-size: 25px; }
+  a {
+    color: rgba(255, 255, 255, 0.82);
+    font-weight: 600;
+    text-decoration: none;
 
-      .talk { font-size: 30px; }
-
-      button { font-size: 13px; }
+    &:hover {
+      color: #f0ba72;
     }
+  }
+
+  p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.85rem;
   }
 }

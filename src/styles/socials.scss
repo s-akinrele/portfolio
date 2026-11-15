@@ -8,68 +8,72 @@
   h6 {
     color: $mustard;
     text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 0.72rem;
   }
 
   h3 {
-    font-family: $basicFont;
+    font-family: $displayFont;
+    font-weight: 600;
+    letter-spacing: -0.02em;
   }
 
   .connect {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .action-item {
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    flex-direction: column;
+    align-items: center;
+    gap: 0.9rem;
+    min-width: 0;
+    border-radius: 14px;
+    padding: 0.95rem 1rem;
+    background: #2a2d45;
+    text-decoration: none;
+    color: #fff;
+    transition: background 0.2s ease, transform 0.2s ease;
 
-    .action-item {
-      display: flex;
-      justify-content: space-between;
-      border: 1px solid $mustard;
-      padding: 20px;
-      border-radius: 10px;
-      background-color: #2d304b;
-      text-decoration: none;
-      color: #ffff;
-      margin-bottom: 20px;
+    img {
+      order: -1;
+      width: 28px;
+      height: 28px;
+      flex: none;
+      filter: invert(1);
+    }
 
-      img { 
-        width: 40px;
-        height: 40px;
-        align-self: center;
-      }
+    p {
+      margin: 0;
+      font-weight: 700;
+      font-size: 0.98rem;
+      letter-spacing: -0.01em;
+    }
 
-      p {
-        font-family: $basicFont;
-        font-size: 22px;
-        font-weight: 700;
-      }
+    span {
+      display: block;
+      margin-top: 0.15rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.62);
+    }
 
-      span {
-        font-size: 10px;
-        color: $mustard;
-        font-weight: 500;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-      }
-
-      &:hover {
-        background-color: $mustard;
-
-        p, span { color: black; }
-      }
+    &:hover {
+      background: #353955;
+      transform: translateY(-1px);
     }
   }
 
   @media (min-width: $tabletMd) {
     .connect {
-        flex-direction: row;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
 
-        .action-item {
-          width: 25%;
-          margin-bottom: 0;
-
-          &:last-of-type {
-            margin-top: 25px;
-          }
-        }
-     }
+  @media (min-width: $desktopSm) {
+    .connect {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
   }
 }
